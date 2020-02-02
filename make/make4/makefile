@@ -1,6 +1,7 @@
 # A makefile using suffix rules (deduce)
 # Tasks:
 # - combine by prerequisites
+# - make -t to prevent recompilation after unsubstantial changes to header files
 
 .DEFAULT_GOAL = main
 $(CC) = gcc
