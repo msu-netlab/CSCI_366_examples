@@ -54,3 +54,13 @@ dkms.conf
 **/main
 
 *.swp
+
+cmake/cmake1/CMakeFiles/
+
+*.cmake
+
+**/CMakeCache.txt
+
+**/Makefile
+
+**/CMakeFiles/
