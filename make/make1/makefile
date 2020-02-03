@@ -1,4 +1,7 @@
 # A simple makefile
+# target: prerequisites
+# <TAB> recipe
+#
 # Tasks:
 # - add target clean
 # - add dependencies and touch hello.h 
