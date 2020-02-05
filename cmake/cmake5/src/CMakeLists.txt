@@ -4,7 +4,7 @@ add_executable(main main.c)
 
 set_target_properties(main
 	PROPERTIES
-	RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin"
+	RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
 )
 
 #main depends on hello.h, so we need to tell it where to find it
@@ -15,3 +15,4 @@ add_subdirectory(hello)
 
 #link main with the HELLO library
 target_link_libraries(main HELLO)
+#"${CMAKE_BINARY_DIR}/lib/HELLO")

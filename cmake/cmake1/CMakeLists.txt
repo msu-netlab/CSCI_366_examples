@@ -1,6 +1,7 @@
 # Basic CMake example
 # Tasks:
 # - set up source and build directories
+# - CMake is smart enough to figure out dependency on hello.h
 
 cmake_minimum_required(VERSION 3.10)
 

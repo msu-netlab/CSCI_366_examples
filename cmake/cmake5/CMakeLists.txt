@@ -1,4 +1,4 @@
-# CMake example with static libraries
+# CMake example with dynamic/shared libraries
 
 cmake_minimum_required(VERSION 3.10)
 
