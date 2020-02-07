@@ -66,3 +66,7 @@ cmake/cmake1/CMakeFiles/
 **/CMakeFiles/
 
 cmake/cmake5/install_manifest.txt
+
+CLion/.idea/
+
+CLion/cmake-build-debug/
