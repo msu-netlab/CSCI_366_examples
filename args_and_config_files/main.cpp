@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <unistd.h>
+#include "yaml-cpp/yaml.h"
 
 //#define BASIC
-#define OPTIONS
-//#define CONFIG_FILES
+//#define OPTIONS
+#define CONFIG_FILES
 
 int main(int argc, char *argv[]) {
+   int aflag = -1;
+   int bflag = -1;
+   std::string cvalue;
+
    printf("Hello World!\n");
 
 #ifdef BASIC
@@ -26,9 +31,6 @@ int main(int argc, char *argv[]) {
 #ifdef OPTIONS
    // parse command line arguments as options (named arguments)
    int opt;
-   int aflag = 0;
-   int bflag = 0;
-   char *cvalue = NULL;
    // ":" follows an option name to get argument from optarg
    while((opt = getopt(argc, argv, "abc:")) != -1){
       switch(opt){
@@ -51,7 +53,7 @@ int main(int argc, char *argv[]) {
    }
 
    printf ("aflag = %d, bflag = %d, cvalue = %s\n",
-           aflag, bflag, cvalue);
+           aflag, bflag, cvalue.c_str());
 
    // optind is for the extra arguments that are not parsed
    for(; optind < argc; optind++){
@@ -67,12 +69,25 @@ int main(int argc, char *argv[]) {
 
 #ifdef CONFIG_FILES
    // parse options from a configuration file
+   // YAML Ain't Markup Language (or yet another markup language) https://yaml.org/
+   YAML::Node config = YAML::LoadFile("config.yaml");
+
+   if(config["a"])
+      aflag = config["a"].as<int>();
+   if(config["b"])
+      bflag = config["b"].as<bool>() == 1;
+   if(config["c"])
+      cvalue = config["c"].as<std::string>();
 
 
+
+   printf ("aflag = %d, bflag = %d, cvalue = %s\n",
+           aflag, bflag, cvalue.c_str());
    /**
     * Conclusions:
     * + many configuration file options INI, YAML, TOML, JSON, https://www.hyperrealm.com/libconfig/libconfig.html, http://www.config4star.org/
     * - readability vs features vs correctness: https://github.com/crdoconnor/strictyaml
+    * + learn more about YAML here: https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/
     */
 #endif
 

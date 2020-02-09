@@ -1,0 +1,3 @@
+[submodule "args_and_config_files/yaml-cpp"]
+	path = args_and_config_files/yaml-cpp
+	url = git@github.com:jbeder/yaml-cpp.git
