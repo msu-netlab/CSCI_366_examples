@@ -6,6 +6,27 @@
 #define TDD_RECTANGLE_H
 
 
+#include <exception>
+#include <string>
+
+using namespace std;
+
+class RectangleException: public exception
+{
+private:
+   string message;
+
+public:
+   RectangleException(string message){
+      this->message = message;
+   }
+
+   virtual const char* what() const throw(){
+      return message.c_str();
+   }
+};
+
+
 class Rectangle {
 private:
    int xmin, ymin, xmax, ymax;
