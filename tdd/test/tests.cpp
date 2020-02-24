@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
+#include "MockRectangle.h"
 
 #include "Rectangle.h"
 
@@ -107,5 +108,24 @@ INSTANTIATE_TEST_CASE_P(
                 std::make_tuple(2, 2, 4)));
 
 
+// Google Mock test
 
+using ::testing::AtLeast;
+using ::testing::Return;
+
+
+TEST(PainterTest, CanDrawSomething) {
+   MockRectangle mockr(0, 0, 1, 1);
+
+   EXPECT_CALL(mockr, get_width())
+              .Times(AtLeast(1))
+              .WillRepeatedly(Return(1));
+
+   EXPECT_CALL(mockr, get_height())
+           .Times(AtLeast(1))
+           .WillRepeatedly(Return(1));
+
+
+   EXPECT_EQ(mockr.area(), 1);      
+}
 

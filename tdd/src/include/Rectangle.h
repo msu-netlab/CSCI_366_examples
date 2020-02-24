@@ -42,11 +42,23 @@ public:
     */
    Rectangle(int xmin, int ymin, int xmax, int ymax);
 
+   virtual ~Rectangle(){};
+
    /**
     * Compute rectangle area
     * @return
     */
    int area();
+
+   /**
+    * @return rectangle width
+    */
+   virtual int get_width();
+
+   /**
+    * @return rectangle height
+    */
+   virtual int get_height();
 };
 
 

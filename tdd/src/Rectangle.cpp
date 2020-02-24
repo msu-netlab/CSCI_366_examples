@@ -14,6 +14,14 @@ Rectangle::Rectangle(int xmin, int ymin, int xmax, int ymax) {
       throw RectangleException("All cordinates equal!");
 }
 
+int Rectangle::get_width(){
+   return xmax - xmin;
+}
+
+int Rectangle::get_height() {
+   return ymax - ymin;
+}
+
 int Rectangle::area() {
-   return (xmax - xmin) * (ymax - ymin);
+   return this->get_width() * this->get_height();
 }
