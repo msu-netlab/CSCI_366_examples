@@ -48,7 +48,7 @@ public:
     * Compute rectangle area
     * @return
     */
-   int area();
+   virtual int area();
 
    /**
     * @return rectangle width

@@ -3,6 +3,7 @@
 #include "MockRectangle.h"
 
 #include "Rectangle.h"
+#include "Square.h"
 
 /**
  * Discussion:
@@ -110,27 +111,39 @@ INSTANTIATE_TEST_CASE_P(
 
 // Google Mock test
 
-using ::testing::AtLeast;
-using ::testing::Return;
-using ::testing::InSequence;
+//using ::testing::AtLeast;
+//using ::testing::Return;
+//using ::testing::InSequence;
+//
+//TEST(SquareMock, AreaTest) {
+//   MockRectangle mockr(0, 0, 1, 1);
+//
+//   Square s(&mockr);
+//
+//   EXPECT_CALL(mockr, area())
+//               .Times(1)
+//               .WillOnce(Return(1));
+//
+//   EXPECT_EQ(1, s.area());
+//}
 
 
-TEST(RectangleAreaMock, AreaTest) {
-   MockRectangle mockr(0, 0, 1, 1);
-
-//   {
-//      InSequence seq;
-
-      EXPECT_CALL(mockr, get_width())
-              .Times(AtLeast(1))
-              .WillRepeatedly(Return(1));
-
-      EXPECT_CALL(mockr, get_height())
-              .Times(AtLeast(1))
-              .WillRepeatedly(Return(1));
-//   }
-
-
-   EXPECT_EQ(mockr.area(), 1);
-}
+//TEST(RectangleAreaMock, AreaTest) {
+//   MockRectangle mockr(0, 0, 1, 1);
+//
+////   {
+////      InSequence seq;
+//
+//      EXPECT_CALL(mockr, get_width())
+//              .Times(AtLeast(1))
+//              .WillRepeatedly(Return(1));
+//
+//      EXPECT_CALL(mockr, get_height())
+//              .Times(AtLeast(1))
+//              .WillRepeatedly(Return(1));
+////   }
+//
+//
+//   EXPECT_EQ(mockr.area(), 1);
+//}
 

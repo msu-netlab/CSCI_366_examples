@@ -1,4 +1,4 @@
-add_executable(tdd_tests tests.cpp ../src/Rectangle.cpp ../src/include/Rectangle.h MockRectangle.h)
+add_executable(tdd_tests tests.cpp ../src/Rectangle.cpp ../src/include/Rectangle.h MockRectangle.h ../src/Square.cpp ../src/include/Square.h)
 
 include_directories(${PROJECT_SOURCE_DIR}/src/include)
 

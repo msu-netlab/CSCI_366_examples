@@ -8,6 +8,8 @@ public:
 
    MOCK_METHOD(int, get_width, (), (override));
    MOCK_METHOD(int, get_height, (), (override));
+   MOCK_METHOD(int, area, (), (override));
+
 };
 
 
