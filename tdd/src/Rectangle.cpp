@@ -15,5 +15,5 @@ Rectangle::Rectangle(int xmin, int ymin, int xmax, int ymax) {
 }
 
 int Rectangle::area() {
-   return 4;
+   return (xmax - xmin) * (ymax - ymin);
 }
