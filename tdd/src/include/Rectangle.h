@@ -32,7 +32,21 @@ private:
    int xmin, ymin, xmax, ymax;
 
 public:
-   void initialize(int xmin, int ymin, int xmax, int ymax);
+
+   /**
+    * Set up a rectangle in a constructor
+    * @param xmin
+    * @param ymin
+    * @param xmax
+    * @param ymax
+    */
+   Rectangle(int xmin, int ymin, int xmax, int ymax);
+
+   /**
+    * Compute rectangle area
+    * @return
+    */
+   int area();
 };
 
 

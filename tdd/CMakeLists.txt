@@ -7,4 +7,6 @@ add_subdirectory(googletest)
 
 add_subdirectory(test)
 
+include_directories(${PROJECT_SOURCE_DIR}/src/include)
+
 add_executable(tdd main.cpp src/Rectangle.cpp src/include/Rectangle.h)

@@ -4,9 +4,16 @@
 
 #include "Rectangle.h"
 
-void Rectangle::initialize(int xmin, int ymin, int xmax, int ymax) {
+Rectangle::Rectangle(int xmin, int ymin, int xmax, int ymax) {
    this->xmin = xmin;
    this->ymin = ymin;
    this->xmax = xmax;
    this->ymax = ymax;
+
+   if(xmin==ymin && xmin==ymax && xmin==xmax)
+      throw RectangleException("All cordinates equal!");
+}
+
+int Rectangle::area() {
+   return 4;
 }
