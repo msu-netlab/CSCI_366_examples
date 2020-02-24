@@ -112,20 +112,25 @@ INSTANTIATE_TEST_CASE_P(
 
 using ::testing::AtLeast;
 using ::testing::Return;
+using ::testing::InSequence;
 
 
-TEST(PainterTest, CanDrawSomething) {
+TEST(RectangleAreaMock, AreaTest) {
    MockRectangle mockr(0, 0, 1, 1);
 
-   EXPECT_CALL(mockr, get_width())
+//   {
+//      InSequence seq;
+
+      EXPECT_CALL(mockr, get_width())
               .Times(AtLeast(1))
               .WillRepeatedly(Return(1));
 
-   EXPECT_CALL(mockr, get_height())
-           .Times(AtLeast(1))
-           .WillRepeatedly(Return(1));
+      EXPECT_CALL(mockr, get_height())
+              .Times(AtLeast(1))
+              .WillRepeatedly(Return(1));
+//   }
 
 
-   EXPECT_EQ(mockr.area(), 1);      
+   EXPECT_EQ(mockr.area(), 1);
 }
 
