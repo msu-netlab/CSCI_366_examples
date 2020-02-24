@@ -12,15 +12,21 @@
  * - using fixtures
  * - FAIL() (for example in switch default)
  * - testing with exceptions
+ * - parameterized tests
  */
 
-TEST(BasicTest, Success){
-   EXPECT_EQ(0,1);
-   printf("after expect\n");
-   ASSERT_EQ(0,1);
-   printf("after assert\n");
-}
 
+// Basic tests showing comparisons
+
+//TEST(BasicTest, Success){
+//   EXPECT_EQ(0,1);
+//   printf("after expect\n");
+//   ASSERT_EQ(0,1);
+//   printf("after assert\n");
+//}
+
+
+// Basic tests showing single function testing
 
 TEST(RectangleInitializeBasic, Initialize_Correct){
    EXPECT_NO_FATAL_FAILURE(Rectangle r(0, 0, 1, 1));
@@ -35,6 +41,8 @@ TEST(RectangleAreaBasic, Correct_Area_Calculated){
    ASSERT_EQ(4, r.area());
 }
 
+
+// Fixture tests including setup and teardown
 
 class RectangleArea: public ::testing::Test{
 protected:
@@ -70,6 +78,33 @@ protected:
 TEST_F(RectangleArea, Area_Correct){
    ASSERT_EQ(r->area(),4);
 }
+
+
+// Parameterized tests
+
+class RectangleAreaParams : public testing::TestWithParam<std::tuple<int,int,int>> {
+protected:
+   Rectangle *r;
+
+   RectangleAreaParams(){
+      r = new Rectangle(0,0, std::get<0>(GetParam()), std::get<1>(GetParam()));
+   }
+
+   ~RectangleAreaParams(){
+      delete r;
+   }
+};
+
+TEST_P(RectangleAreaParams, AreaCorrect) {
+   ASSERT_EQ(r->area(), std::get<2>(GetParam()));
+}
+
+INSTANTIATE_TEST_CASE_P(
+        RandomTestName,
+        RectangleAreaParams,
+        ::testing::Values(
+                std::make_tuple(1, 1, 1),
+                std::make_tuple(2, 2, 4)));
 
 
 
