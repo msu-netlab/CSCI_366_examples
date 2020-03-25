@@ -87,7 +87,10 @@
 		<Unit filename="/mnt/c/Users/mwitt_cjbzle6/Google Drive/Teaching/CSCI 366/code/CSCI_366_examples/NASM/examples.asm">
 			<Option target="main"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/mwitt_cjbzle6/Google Drive/Teaching/CSCI 366/code/CSCI_366_examples/NASM/get_elem.asm">
+		<Unit filename="/mnt/c/Users/mwitt_cjbzle6/Google Drive/Teaching/CSCI 366/code/CSCI_366_examples/NASM/get_2D_array_element.asm">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mwitt_cjbzle6/Google Drive/Teaching/CSCI 366/code/CSCI_366_examples/NASM/get_2D_vector_element.asm">
 			<Option target="main"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/mwitt_cjbzle6/Google Drive/Teaching/CSCI 366/code/CSCI_366_examples/NASM/main.cpp">
