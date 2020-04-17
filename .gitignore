@@ -81,3 +81,5 @@ tdd/.idea/
 args_and_config_files/.idea/
 
 NASM/cmake-build-debug/
+
+sockets/cmake-build-debug/
