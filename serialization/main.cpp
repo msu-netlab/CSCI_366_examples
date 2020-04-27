@@ -23,9 +23,12 @@ int main() {
 
    // serialize the array
    ofstream array_ofp(fname); // create an output file stream
-   cereal::JSONOutputArchive write_archive(array_ofp); // initialize an archive on the file
-   write_archive(cereal::make_nvp("array", array1)); // serialize the data giving it a name
-   write_archive.finishNode(); // wait for the writing process to finish
+   // cereal archives are guaranteed to finish writing before leaving scope
+   // to finalize writing, put serialization into its own scope
+   {  // open scope
+      cereal::JSONOutputArchive write_archive(array_ofp); // initialize an archive on the file
+      write_archive(cereal::make_nvp("array", array1)); // serialize the data giving it a name
+   } // close scope
    array_ofp.close(); // close the file
 
 

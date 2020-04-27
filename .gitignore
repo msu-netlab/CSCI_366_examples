@@ -85,3 +85,5 @@ NASM/cmake-build-debug/
 sockets/cmake-build-debug/
 
 threads/cmake-build-debug/
+
+serialization/cmake-build-debug/
