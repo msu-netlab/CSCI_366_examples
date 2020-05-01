@@ -7,3 +7,9 @@
 [submodule "serialization/cereal"]
 	path = serialization/cereal
 	url = git@github.com:USCiLab/cereal.git
+[submodule "sqlite/sqlite_modern_cpp"]
+	path = sqlite/sqlite_modern_cpp
+	url = git@github.com:SqliteModernCpp/sqlite_modern_cpp.git
+[submodule "sqlite/sqlite"]
+	path = sqlite/sqlite
+	url = git@github.com:sqlite/sqlite.git
