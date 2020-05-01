@@ -14,6 +14,7 @@ add_executable(sqlite main.cpp)
 
 # include the sqlite3 library
 # needs to be installed on Ubuntu via
+# $ sudo apt install libsqlite3-dev
 include_directories(/usr/include)
 link_directories(/usr/lib)
 target_link_libraries(sqlite sqlite3)
