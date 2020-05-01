@@ -87,3 +87,5 @@ sockets/cmake-build-debug/
 threads/cmake-build-debug/
 
 serialization/cmake-build-debug/
+
+sqlite/cmake-build-debug/
